@@ -1,5 +1,6 @@
 
 cradle = require 'cradle'
+PluggableStore = require 'pluggable-store'
 
 designDoc =
   ids:
@@ -21,4 +22,6 @@ class CouchDB
   keys: (cb) -> @db.view 'pluggable-store/ids', (err, res) ->
     cb null, (id for {id} in res)
 
-module.exports = CouchDB
+create = (opts) -> new PluggableStore adapter: (new CouchDB opts)
+create.adapter = CouchDB
+module.exports = create
