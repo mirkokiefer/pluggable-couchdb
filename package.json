@@ -1,0 +1,25 @@
+{
+  "name": "pluggable-couchdb",
+  "version": "0.0.1",
+  "description": "a couchdb adapter for pluggable-store",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script",
+    "build": "./node_modules/.bin/coffee -o ./lib -cw ./src"
+  },
+  "repository": "",
+  "keywords": [
+    "couchdb"
+  ],
+  "devDependencies": {
+    "mocha": "~1.6.0",
+    "coffee-script": "~1.4.0",
+    "pluggable-store": "~0.1.1",
+    "pluggable-store-tests": "0.0.1"
+  },
+  "author": "Mirko Kiefer <mail@mirkokiefer.com>",
+  "license": "BSD",
+  "dependencies": {
+    "cradle": "~0.6.4"
+  }
+}
